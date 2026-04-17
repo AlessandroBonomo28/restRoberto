@@ -19,3 +19,24 @@ Example query: `GET https://rest.roberto.site/audio?token=valid_token&text=nyanp
 
 # Docker
 There's now a working image deployed. Take a look [here](https://github.com/TheTipo01/restRoberto/pkgs/container/restRoberto) for the image
+
+### Docker Compose
+To run restRoberto with Docker Compose, first copy `example_config.yml` to `config.yml` and edit it with your tokens, then run:
+
+```
+docker compose up -d
+```
+# Clients
+
+### Rust
+A synchronous client using ureq is available in the repository under `rust-client` folder.
+### Python 
+Use the python client under the `python-client` folder to perform a GET request and save the response content to an output.wav file. It requires request library. 
+
+```
+pip install requests
+```
+### curl
+```
+curl -o output.wav "http://localhost:8087/audio?token=your_token&text=ciao"
+```
