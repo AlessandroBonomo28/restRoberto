@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  roberto:
+    image: ghcr.io/thetipo01/restroberto:0.1.3
+    container_name: roberto
+    ports:
+      - "8087:8087"
+    volumes:
+      # CAMBIATO: Il percorso interno ora è quello reale di Wine
+      - ./config.yml:/root/.wine/drive_c/roberto/config.yml
+      # Se vuoi anche i log o i file temporanei:
+      - ./temp:/root/.wine/drive_c/roberto/temp
+    restart: unless-stopped
