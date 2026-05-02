@@ -12,3 +12,6 @@ services:
       # Se vuoi anche i log o i file temporanei:
       - ./temp:/root/.wine/drive_c/roberto/temp
     restart: unless-stopped
+    # Decommenta securityopt per allentare restrizioni e farlo funzionare in cloud hosting
+    #security_opt:
+    #  - seccomp:unconfined
